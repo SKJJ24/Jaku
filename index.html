@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jakukam Logistics | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="JK.css" rel="stylesheet" type="text/css">
+    <style>
+        /* Slideshow styles */
+        #slideshow {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        .slideshow-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            background: #007bff;
+            color: white;
+            padding: 50px 0;
+            box-sizing: border-box;
+        }
+
+        /* Featured and Best-Selling Products */
+        .product-section {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .product-card {
+            display: inline-block;
+            width: 200px;
+            height: 350px;
+            margin: 10px;
+            text-align: center;
+            vertical-align: top;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-top: 5px;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #007bff;
+            margin-top: 5px;
+        }
+
+        .product-card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jakukam Logistics</h1>
+            <p>Your trusted source for quality electrical appliances and cellphones</p>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="checkout.html">Checkout</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Welcome to Jakukam Logistics!</h2>
+        <p>Discover our range of electrical appliances and Smartphones.</p>
+        <a href="products.html" class="shop-now-btn">Shop Now</a>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="product-section featured-products">
+    
+		
+        <div class="product-card">
+            <h3>Samsung Galaxy S24 ultra</h3>
+            <img src="pic of products/samsung-galaxy-s24-ultra-5gsmartphone-tittanium-violet-1-1-800x800.png" alt="Samsung S24 ultra">
+            <p>$1999.99</p>
+            <button onclick="addToCart('Samsung Galaxy S24 ultra', 1999.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <h3>LG Smart Refrigerator</h3>
+            <img src="pic of products/Galanz-4-6-Cu-ft-Two-Door-Mini-Refrigerator-with-Freezer-Stainless-Steel-New-Width-19-13_66eb4769-f8a8-47b6-a29c-2be38d4ae0ad.6c130beaaf7d5adc0bda61b3ae6be2dd.jpeg" alt="LG Smart Refrigerator">
+            <p>$1,299.99</p>
+            <button onclick="addToCart('LG Smart Refrigerator', 1299.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <h3>Apple MacBook Pro</h3>
+            <img src="pic of products/hero_intro_endframe__e6khcva4hkeq_large.jpg" alt="Apple MacBook Pro">
+            <p>$1,499.99</p>
+            <button onclick="addToCart('Apple MacBook Pro', 1499.99)">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Best-Selling Products Section -->
+    <section class="product-section best-selling-products">
+        <h2>Best-Selling Products</h2>
+        <div class="product-card">
+            <h3>iPhone 14</h3>
+            <img src="pic of products/images (6).jpg" alt="iPhone 14">
+            <p>$999.99</p>
+            <button onclick="addToCart('iPhone 14', 999.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <h3>Samsung 1TB SSD</h3>
+            <img src="pic of products/images (7).jpg" alt="Samsung 1TB SSD">
+            <p>$150.00</p>
+            <button onclick="addToCart('Samsung 1TB SSD', 150.00)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <h3>Sony Headphones</h3>
+            <img src="pic of products/612MKMMiDmL._AC_SL1500_.jpg" alt="Sony Headphones">
+            <p>$299.99</p>
+            <button onclick="addToCart('Sony Headphones', 299.99)">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Slideshow for Categories -->
+    <section id="slideshow">
+        <div class="slideshow-container">
+            <div class="slide">Desks</div>
+            <div class="slide">Electrical Appliances</div>
+            <div class="slide">Furniture</div>
+            <div class="slide">Smartphones</div>
+            <div class="slide">Laptops</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jakukam Logistics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function addToCart(product, price) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ product, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'checkout.html';
+        }
+
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function startSlideshow() {
+            showSlides();
+            setInterval(showSlides, 3000);
+        }
+
+        startSlideshow();
+    </script>
+</body>
+</html>
